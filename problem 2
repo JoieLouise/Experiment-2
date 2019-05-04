@@ -3,66 +3,36 @@
 // Experiment 2
 // Problem 2
 
+
 #include <iostream>
-#include <cmath>
 using namespace std;
 int main()
 {
-	int x,y;
-	double z, V; 
-	z = 2.5;
-	cout.precision(2);
+	double latecharge, waterconsumption, balancedue, charge, watercost, water;
+	charge = 35;
 	
+	latecharge = 20;
 	
-	cout << "Value of x: "; 
-    cin >> x;
-	cout << "Value of y: ";
-	cin >> y;
+	cout << "Enter how many Gallons of water used: "; 
+	cin >> water;
+	cout << " Enter the balance due : "; 
+	cin >> balancedue;
 	
-
-	switch (x)
-	{	
-		case 1:
-		
-		if(y > 1 && y < 5)
-		
-		{
-		V = x*y*z;
-		cout << "V = " << V << endl;
-		}	
-		
-		else // (y >= 5)
-		{
-		V = x + (y / z);
-		cout << "V = " << V << endl;
-		}
-		break;
-		
-		case 2:
-		
-		if (y <= 5)
-		{
-			V = abs((x-y)/z);
-			cout << "V = " << V << endl;
-		}
-		
-		else // y > 5 
-		{
-			V = x - (sqrt(y+z));
-			cout << "V = " << V << endl;
-		}
-		break;
-		
-	}
-
-	if(x>2) 
+	if (balancedue > 0)
 	{
-		V = x+y+z;
-		cout << "V = " << V << endl;
+		waterconsumption = water * 1.10;
+		watercost = charge + waterconsumption + balancedue + latecharge;
+		cout << " The water bill for this month: Pesos " << watercost << endl;
 	}
 	
-
+	else 
+	{
+		waterconsumption = water * 1.10;
+		watercost = charge + waterconsumption;
+		cout << "The water bill for this month: Pesos " << watercost << endl;
+		
+	}
+	
 return 0;
-	
-	
+
 }
